@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correlation Heatmap</title>
+    <!-- Load Plotly library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Create a div for the heatmap -->
+    <div id="heatmap"></div>
+
+    <!-- Embedded JSON data for heatmap -->
+    <script type="application/json" id="heatmap-data">
+        {
+            "Bitcoin": [1, 0.5, 0.7, 0.3, 0.9],
+            "Ethereum": [0.5, 1, 0.8, 0.6, 0.7],
+            "Cardano": [0.7, 0.8, 1, 0.4, 0.6],
+            "Polkadot": [0.3, 0.6, 0.4, 1, 0.5],
+            "Chainlink": [0.9, 0.7, 0.6, 0.5, 1]
+        }
+    </script>
+
+    <!-- JavaScript code to create the heatmap -->
+    <script>
+        // Get JSON data from embedded script
+        var jsonData = JSON.parse(document.getElementById('heatmap-data').textContent);
+
+        // Extract data
+        var z = [];
+        var keys = Object.keys(jsonData);
+        keys.forEach(function(key) {
+            z.push(jsonData[key]);
+        });
+
+        // Create heatmap trace
+        var trace = {
+            z: z,
+            x: keys,
+            y: keys,
+            type: 'heatmap',
+            colorscale: 'Viridis'
+        };
+
+        // Set layout
+        var layout = {
+            title: 'Correlation Heatmap',
+            xaxis: { title: 'Cryptocurrencies' },
+            yaxis: { title: 'Cryptocurrencies' }
+        };
+
+        // Plot the heatmap
+        Plotly.newPlot('heatmap', [trace], layout);
+    </script>
+</body>
+</html>

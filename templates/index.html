@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang=“en”>
+<head>
+    <meta charset=“UTF-8">
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+    <title>Crypto 20</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            background: linear-gradient(135deg, #F6D365, #FDA085);
+            animation: changeBackground 10s infinite alternate;
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+        @keyframes changeBackground {
+            0% { background: linear-gradient(135deg, #F6D365, #FDA085); }
+            50% { background: linear-gradient(135deg, #F6D365, #7BC6CC); }
+            100% { background: linear-gradient(135deg, #F6D365, #FDA085); }
+        }
+        .crypto-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        }
+        .heatmap-link {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #F9F9F9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #F1F1F1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crypto 20</h1>
+    <div class=“crypto-info”>
+        <h2>Top 20 Cryptocurrencies</h2>
+        <!-- Dropdown menu -->
+        <div class=“dropdown”>
+            <button class=“dropbtn”>Bit coins</button>
+            <div class=“dropdown-content”>
+                <a href=“bitcoin_details.html”>Details</a>
+                <!-- Add more cryptocurrency options here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

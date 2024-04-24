@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correlation Heatmap</title>
+    <!-- Load Plotly library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Cryptocurrency Price Change Scatter Plot</h1>
+
+    <div id="scatterPlot"></div>
+
+    <script>
+        // Sample cryptocurrency data for the scatter plot
+        var data = {
+            Open: [66845.7, 3201.6, 605.5, 157.0, 0.55, 3209.4, 1.0, 0.16 , 0.0, 5.93, 0.5, 1.0], //  'Open' values
+            Volume: [26962790400, 11401419776, 1230910080, 2797006848, 1639829120, 121113464, 6797224960, 1146353536, 696966400, 239228208, 50100391936], //  'Volume' values
+            crypto_name: ['Bitcoin', 'Ethereum', 'Binance', 'Solana', 'xrp','Steth', 'usd-coin', 'doge', 'Shiba-Inu', 'Toncoin', 'Tether'] // cryptocurrency names
+        };
+
+
+        
+        var colors = ['red', 'blue', 'green', 'orange', 'purple', 'cyan', 'magenta', 'yellow', 'lime', 'pink'];
+
+        // Create trace for the scatter plot
+        var trace = {
+            x: data.Open,
+            y: data.Volume,
+            mode: 'markers',
+            type: 'scatter',
+            marker: {
+                color: colors,
+                opacity: 1.0
+            },
+            text: data.crypto_name,
+            name: 'Cryptocurrency Price Change'
+        };
+
+        // Layout for the scatter plot
+        var layout = {
+            title: 'Cryptocurrency Price/ Volume Co-relation',
+            xaxis: {
+                title: 'Price'
+            },
+            yaxis: {
+                title: 'Volume'
+            }
+        };
+
+        // Create the scatter plot using Plotly
+        Plotly.newPlot('scatterPlot', [trace], layout);
+    </script>
+
+</body>
+</html>
+
+
+
