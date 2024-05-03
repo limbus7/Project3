@@ -1,4 +1,4 @@
-update
+![image](https://github.com/limbus7/Project3/assets/105176210/52ce14cf-3135-499f-874a-3ed02d7d61cc)
 
 **Project Description: Data Visualization of Top 20 Cryptocurrencies Trends**
 
